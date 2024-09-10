@@ -1,6 +1,6 @@
 # Autonomous Lane Detection
 
-This project implements a lane detection system using OpenCV to process images and videos for identifying lane markings. By transforming the camera’s view and applying advanced image processing techniques, the system accurately detects lanes, even in challenging conditions like curves. It also offers multiple visualizations, including detected lanes, sliding windows, and a bird’s-eye view, making it a versatile tool for autonomous driving research.
+This project implements a lane detection system using OpenCV to process images and videos for identifying lane markings. By transforming the camera's view and applying advanced image processing techniques, the system accurately detects lanes. It also offers multiple visualizations, including standard lane detection, bird's-eye view, and a sliding window view, making it a versatile tool for autonomous driving research.
 
 ## Standard Lane Detection
 
