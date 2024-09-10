@@ -255,33 +255,33 @@ class LaneLines:
 
         W = 400
         H = 500
-        widget = np.copy(out_img[:H, :W])
+        widget = np.copy(out_img[:H, -W:])
         widget //= 2
-        out_img[:H, :W] = widget
+        out_img[:H, -W:] = widget
 
-        direction = max(set(self.dir), key = self.dir.count)
+        direction = max(set(self.dir), key=self.dir.count)
         msg = "Keep Straight Ahead"
         curvature_msg = "Curvature = {:.0f} m".format(min(lR, rR))
         if direction == 'L':
             y, x = self.left_curve_img[:,:,3].nonzero()
-            out_img[y, x-100+W//2] = self.left_curve_img[y, x, :3]
+            out_img[y, x-100+W//2 + (out_img.shape[1] - W)] = self.left_curve_img[y, x, :3]
             msg = "Left Curve Ahead"
         if direction == 'R':
             y, x = self.right_curve_img[:,:,3].nonzero()
-            out_img[y, x-100+W//2] = self.right_curve_img[y, x, :3]
+            out_img[y, x-100+W//2 + (out_img.shape[1] - W)] = self.right_curve_img[y, x, :3]
             msg = "Right Curve Ahead"
         if direction == 'F':
             y, x = self.keep_straight_img[:,:,3].nonzero()
-            out_img[y, x-100+W//2] = self.keep_straight_img[y, x, :3]
+            out_img[y, x-100+W//2 + (out_img.shape[1] - W)] = self.keep_straight_img[y, x, :3]
 
-        cv2.putText(out_img, msg, org=(10, 240), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+        cv2.putText(out_img, msg, org=(out_img.shape[1] - W + 10, 240), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
         if direction in 'LR':
-            cv2.putText(out_img, curvature_msg, org=(10, 280), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+            cv2.putText(out_img, curvature_msg, org=(out_img.shape[1] - W + 10, 280), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
 
         cv2.putText(
             out_img,
             "Good Lane Keeping",
-            org=(10, 400),
+            org=(out_img.shape[1] - W + 10, 400),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=1.2,
             color=(0, 255, 0),
@@ -290,7 +290,7 @@ class LaneLines:
         cv2.putText(
             out_img,
             "Vehicle is {:.2f} m away from center".format(pos),
-            org=(10, 450),
+            org=(out_img.shape[1] - W + 10, 450),
             fontFace=cv2.FONT_HERSHEY_SIMPLEX,
             fontScale=0.6,
             color=(255, 255, 255),
