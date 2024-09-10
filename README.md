@@ -2,17 +2,21 @@
 
 This project implements a lane detection system using OpenCV to process images and videos for identifying lane markings. By transforming the camera’s view and applying advanced image processing techniques, the system accurately detects lanes, even in challenging conditions like curves. It also offers multiple visualizations, including detected lanes, sliding windows, and a bird’s-eye view, making it a versatile tool for autonomous driving research.
 
-## Demo
+## Standard Lane Detection
 
-### Standard Lane Detection
+The standard lane detection view displays the detected lane markings, direction arrows indicating the lane's curvature, the vehicle's center offset, and the calculated curve radius for accurate lane tracking.
 
 https://github.com/user-attachments/assets/ac170b0d-3898-4ae4-ba7d-5ed523caaf4f
 
-### Bird's Eye View
+## Bird's Eye View
+
+The bird's-eye view provides a top-down perspective of the road, highlighting the lane lines for better visualization of the lane's structure.
 
 https://github.com/user-attachments/assets/c69d7890-56bc-43bf-93b0-06a28e5db923
 
-### Sliding Window View
+## Sliding Window View
+
+The sliding window view shows the detection process, using windows that track the lane markings along the road, ensuring consistent lane detection throughout the image.
 
 https://github.com/user-attachments/assets/758cde22-d7d8-4a64-a873-aaf29a553a44
 
