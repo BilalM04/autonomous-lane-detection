@@ -42,7 +42,7 @@ https://github.com/user-attachments/assets/758cde22-d7d8-4a64-a873-aaf29a553a44
 5. **Calculating Measurements**
     - After detecting the lanes, measurements such as the lane's curvature radius, the direction of the curve (left or right), and the vehicle’s offset from the center of the lane are calculated. These metrics help understand the road structure and assist in vehicle alignment.
 
-## Directory Structure
+## Project Structure
 
 - `main.py`: Entry point of the lane detection system.
 - `Thresholding.py`: Contains code for image thresholding to identify lane lines.
