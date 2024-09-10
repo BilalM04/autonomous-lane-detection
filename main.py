@@ -17,9 +17,9 @@ import matplotlib.image as mpimg
 import cv2
 from docopt import docopt
 from moviepy.editor import VideoFileClip
-from Thresholding import *
-from PerspectiveTransformation import *
-from LaneLines import *
+from Thresholding import Thresholding
+from PerspectiveTransformation import PerspectiveTransformation
+from LaneLines import LaneLines
 import os
 
 class FindLaneLines:
