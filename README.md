@@ -86,11 +86,11 @@ python main.py [--video | --image] [--all] INPUT_PATH
 
 1. Process a video with all visualizations:
    ```bash
-   python main.py --video ./input_videos/short_video.mp4
+   python main.py --video --all ./input_videos/short_video.mp4
    ```
 2. Process an image with all visualizations:
    ```bash
-   python main.py --image ./input_images/straight_lines1.jpg
+   python main.py --image --all ./input_images/straight_lines1.jpg
    ```
 
 ### Results
